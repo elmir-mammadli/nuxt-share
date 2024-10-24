@@ -11,9 +11,6 @@ declare module '@nuxt/schema' {
   interface NuxtConfig {
     share?: ModuleOptions
   }
-  interface NuxtOptions {
-    share?: ModuleOptions
-  }
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -32,7 +29,10 @@ export default defineNuxtModule<ModuleOptions>({
     const mergedOptions = defu(nuxt.options.runtimeConfig.public.share as ModuleOptions, options)
 
     // Set the public runtime config (available globally in your app)
-    nuxt.options.runtimeConfig.public.share = mergedOptions
+    nuxt.options.runtimeConfig.public.share = {
+      ...mergedOptions,
+      baseURL: mergedOptions.baseURL || ''
+    }
 
     // Register the Share component globally
     addComponent({

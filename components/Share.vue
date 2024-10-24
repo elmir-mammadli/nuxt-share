@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Define a union type for valid platforms
-import type { PlatformUnions, PlatformKeysConditionalTypes, ShareProperties } from '~/types/shareTypes'
+import { type PlatformUnions, type PlatformKeysConditionalTypes } from '~/types/shareTypes'
 import { shareProperties } from '~/utils/shareConfig'
 // Define props to accept `PlatformUnions` for single platform or `PlatformUnions[]` for multiple platforms
 const props = defineProps<PlatformKeysConditionalTypes>()
@@ -54,7 +54,6 @@ function getShareUrlForPlatform (platform: PlatformUnions) {
       >
         <component
           :is="getSharePropertiesForPlatform(element)?.icon"
-          class="size-10 rounded-inner"
           :font-controlled="false"
         />
       </NuxtLink>
@@ -70,7 +69,6 @@ function getShareUrlForPlatform (platform: PlatformUnions) {
     >
       <component
         :is="getSharePropertiesForPlatform(props.platform)?.icon"
-        class="size-10 rounded-inner"
         :font-controlled="false"
       />
     </NuxtLink>

@@ -4,17 +4,17 @@ export const shareProperties: Array<ShareProperties> = [
     {
       platform: 'facebook',
       url: 'https://www.facebook.com/sharer/sharer.php?u=',
-      icon: 'IconSocialsFacebook'
+      icon: 'IconFacebook'
     },
     {
       platform: 'twitter',
       url: 'https://x.com/intent/post?url=',
-      icon: 'IconSocialsXgreen'
+      icon: 'IconXblack'
     },
     {
       platform: 'linkedin',
       url: 'https://www.linkedin.com/sharing/share-offsite/?url=',
-      icon: 'IconSocialsLinkedIn'
+      icon: 'IconLinkedIn'
     },
     {
       platform: 'email',
